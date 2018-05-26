@@ -5,12 +5,12 @@ extends KinematicBody2D
 # var b = "textvar"
 
 var motion = Vector2()
-onready var player = get_node("Player")
+var hit = false
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	pass
+	$Sprite.connect("animation_finished", self, "_stop_hit")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -19,10 +19,20 @@ func _ready():
 
 func _physics_process(delta):
 	motion.y = 200
-	if Input.is_key_pressed(KEY_SPACE):
+	
+	if Input.is_key_pressed(KEY_SPACE) and !hit:
 		$Sprite.play("hit")
-		yield(player, "finished")
+		_start_hit()
+	
+	if hit:
+		$Sprite.play("hit")
 	else:
 		$Sprite.play("idle")
+	
 	motion = move_and_slide(motion)
-	pass
+	
+func _stop_hit():
+	hit = false
+	
+func _start_hit():
+	hit = true
