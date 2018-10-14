@@ -1,8 +1,6 @@
 extends KinematicBody2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+const GRAVITY = 200.0
 
 var motion = Vector2()
 var hit = false
@@ -18,7 +16,7 @@ func _ready():
 #	pass
 
 func _physics_process(delta):
-	motion.y = 200
+	motion.y = GRAVITY
 	
 	if Input.is_key_pressed(KEY_SPACE) and !hit:
 		$Sprite.play("hit")
@@ -36,3 +34,7 @@ func _stop_hit():
 	
 func _start_hit():
 	hit = true
+
+func _on_enemy_range_area_entered(area):
+	print("lalala")
+	pass # replace with function body

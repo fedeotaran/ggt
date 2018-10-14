@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://scenes/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://sprites/skeleton/walk animation/frame_00_delay-0.1s.png" type="Texture" id=2]
@@ -15,27 +15,27 @@
 [ext_resource path="res://sprites/skeleton/walk animation/frame_11_delay-0.1s.png" type="Texture" id=13]
 [ext_resource path="res://sprites/skeleton/walk animation/frame_12_delay-0.1s.png" type="Texture" id=14]
 [ext_resource path="res://scenes/Player.gd" type="Script" id=15]
-[ext_resource path="res://sprites/hero/tile020.png" type="Texture" id=16]
-[ext_resource path="res://sprites/hero/tile021.png" type="Texture" id=17]
-[ext_resource path="res://sprites/hero/tile022.png" type="Texture" id=18]
-[ext_resource path="res://sprites/hero/tile023.png" type="Texture" id=19]
-[ext_resource path="res://sprites/hero/tile024.png" type="Texture" id=20]
-[ext_resource path="res://sprites/hero/tile025.png" type="Texture" id=21]
-[ext_resource path="res://sprites/hero/tile026.png" type="Texture" id=22]
-[ext_resource path="res://sprites/hero/tile027.png" type="Texture" id=23]
-[ext_resource path="res://sprites/hero/tile028.png" type="Texture" id=24]
-[ext_resource path="res://sprites/hero/tile029.png" type="Texture" id=25]
-[ext_resource path="res://sprites/hero/tile030.png" type="Texture" id=26]
-[ext_resource path="res://sprites/hero/tile031.png" type="Texture" id=27]
-[ext_resource path="res://sprites/hero/tile032.png" type="Texture" id=28]
-[ext_resource path="res://sprites/hero/tile033.png" type="Texture" id=29]
-[ext_resource path="res://sprites/hero/tile034.png" type="Texture" id=30]
-[ext_resource path="res://sprites/hero/tile035.png" type="Texture" id=31]
-[ext_resource path="res://sprites/hero/tile000.png" type="Texture" id=32]
-[ext_resource path="res://sprites/hero/tile001.png" type="Texture" id=33]
-[ext_resource path="res://sprites/hero/tile002.png" type="Texture" id=34]
-[ext_resource path="res://sprites/hero/tile003.png" type="Texture" id=35]
-[ext_resource path="res://sprites/hero/tile004.png" type="Texture" id=36]
+[ext_resource path="res://sprites/hero/tile000.png" type="Texture" id=16]
+[ext_resource path="res://sprites/hero/tile001.png" type="Texture" id=17]
+[ext_resource path="res://sprites/hero/tile002.png" type="Texture" id=18]
+[ext_resource path="res://sprites/hero/tile003.png" type="Texture" id=19]
+[ext_resource path="res://sprites/hero/tile004.png" type="Texture" id=20]
+[ext_resource path="res://sprites/hero/tile020.png" type="Texture" id=21]
+[ext_resource path="res://sprites/hero/tile021.png" type="Texture" id=22]
+[ext_resource path="res://sprites/hero/tile022.png" type="Texture" id=23]
+[ext_resource path="res://sprites/hero/tile023.png" type="Texture" id=24]
+[ext_resource path="res://sprites/hero/tile024.png" type="Texture" id=25]
+[ext_resource path="res://sprites/hero/tile025.png" type="Texture" id=26]
+[ext_resource path="res://sprites/hero/tile026.png" type="Texture" id=27]
+[ext_resource path="res://sprites/hero/tile027.png" type="Texture" id=28]
+[ext_resource path="res://sprites/hero/tile028.png" type="Texture" id=29]
+[ext_resource path="res://sprites/hero/tile029.png" type="Texture" id=30]
+[ext_resource path="res://sprites/hero/tile030.png" type="Texture" id=31]
+[ext_resource path="res://sprites/hero/tile031.png" type="Texture" id=32]
+[ext_resource path="res://sprites/hero/tile032.png" type="Texture" id=33]
+[ext_resource path="res://sprites/hero/tile033.png" type="Texture" id=34]
+[ext_resource path="res://sprites/hero/tile034.png" type="Texture" id=35]
+[ext_resource path="res://sprites/hero/tile035.png" type="Texture" id=36]
 [ext_resource path="res://ground.tres" type="TileSet" id=37]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -44,7 +44,7 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "walk",
-"speed": 22.0
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -52,21 +52,26 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 15.8549
+
+[sub_resource type="SpriteFrames" id=4]
 
 animations = [ {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
-"loop": false,
-"name": "hit",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ) ],
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ) ],
+"loop": false,
+"name": "hit",
+"speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 24, 32 )
@@ -75,7 +80,6 @@ extents = Vector2( 24, 32 )
 
 [node name="Enemy" type="KinematicBody2D" parent="." index="0"]
 
-editor/display_folded = true
 position = Vector2( 35.0475, 220.894 )
 scale = Vector2( 2, 2 )
 input_pickable = false
@@ -90,14 +94,29 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( -0.814514, -0.814514 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 7
+frame = 10
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" index="1"]
 
+visible = false
 position = Vector2( -3.66682, 0.252151 )
 scale = Vector2( 0.973667, 1.60484 )
 shape = SubResource( 2 )
+
+[node name="enemy_range" type="Area2D" parent="Enemy" index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/enemy_range" index="0"]
+
+shape = SubResource( 3 )
 
 [node name="Player" type="KinematicBody2D" parent="." index="1"]
 
@@ -115,7 +134,7 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Player" index="0"]
 
 scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 3 )
+frames = SubResource( 4 )
 animation = "hit"
 frame = 15
 playing = true
@@ -123,8 +142,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="1"]
 
+visible = false
 position = Vector2( 16, 13 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="TileMap" type="TileMap" parent="." index="2"]
@@ -150,5 +170,7 @@ _sections_unfolded = [ "Cell" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[connection signal="area_entered" from="Enemy/enemy_range" to="Player" method="_on_enemy_range_area_entered"]
 
 
